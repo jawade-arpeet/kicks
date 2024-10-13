@@ -13,7 +13,7 @@ shoeRouter.get("/api/shoes", async (req: Request, res: Response) => {
   }
 });
 
-shoeRouter.get("/api/shoe/:id", async (req: Request, res: Response) => {
+shoeRouter.get("/api/shoes/:id", async (req: Request, res: Response) => {
   const { id } = req.params;
 
   try {
