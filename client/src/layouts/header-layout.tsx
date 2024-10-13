@@ -5,10 +5,17 @@ function HeaderLayout() {
     <>
       <header className="w-full px-8 py-6">
         <nav className="flex items-center justify-between">
-          <Link className="font-black tracking-tighter uppercase text-2xl" to={"/"}>kick</Link>
+          <Link
+            className="font-black tracking-tighter uppercase text-2xl"
+            to={"/"}
+          >
+            kicks
+          </Link>
         </nav>
       </header>
-      <Outlet />
+      <div className="px-4">
+        <Outlet />
+      </div>
     </>
   );
 }

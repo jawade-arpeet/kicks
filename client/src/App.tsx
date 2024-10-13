@@ -1,16 +1,21 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/homepage";
-import HeaderLayout from "./layouts/header-layout";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/homepage';
+import HeaderLayout from './layouts/header-layout';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<HeaderLayout />}>
-          <Route index path="/" element={<HomePage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HeaderLayout />}>
+            <Route index element={<HomePage />} />
+          </Route>
+        </Routes>
+      </Router>
+    </QueryClientProvider>
   );
 }
 
